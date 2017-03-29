@@ -49261,6 +49261,8 @@ module.exports = AuthorPage;
 'use strict';
 
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 var Header = React.createClass({displayName: "Header",
     render: function() {
@@ -49268,9 +49270,9 @@ var Header = React.createClass({displayName: "Header",
             React.createElement("nav", {className: "navbar navbar-default"}, 
                 React.createElement("div", {className: "container-fluid"}, 
                      React.createElement("ul", {className: "nav navbar-nav"}, 
-                        React.createElement("li", null, React.createElement("a", {href: "/"}, "Home")), 
-                        React.createElement("li", null, React.createElement("a", {href: "/#authors"}, "Authors")), 
-                        React.createElement("li", null, React.createElement("a", {href: "/#about"}, "About"))
+                        React.createElement("li", null, React.createElement(Link, {to: "app"}, "Home")), 
+                        React.createElement("li", null, React.createElement(Link, {to: "authors"}, "Authors")), 
+                        React.createElement("li", null, React.createElement(Link, {to: "about"}, "About"))
                     )
                 )
             )
@@ -49280,7 +49282,7 @@ var Header = React.createClass({displayName: "Header",
 
 module.exports = Header;
 
-},{"react":197}],205:[function(require,module,exports){
+},{"react":197,"react-router":28}],205:[function(require,module,exports){
 'use strict';
 
 //import react
