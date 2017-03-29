@@ -49152,7 +49152,7 @@ var FourOFour = React.createClass({displayName: "FourOFour",
                 React.createElement("p", null, "Whoops! Sorry, there is nothing to see here"), 
                 React.createElement("p", null, React.createElement(Link, {to: "app"}, "Back to Home"))
             )
-        )
+        );
     }
 });
 
@@ -49332,18 +49332,24 @@ Router.run(routes, function(Handler) {
 });
 },{"./routes":208,"react":197,"react-router":28}],208:[function(require,module,exports){
 'use strict';
+
 var React = require('react');
+
 var Router = require('react-router');
 var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
 var NotFoundRoute = Router.NotFoundRoute;
+var Redirect = Router.Redirect;
 
 var routes = (
     React.createElement(Route, {name: "app", path: "/", handler: require('./components/app')}, 
         React.createElement(DefaultRoute, {handler: require('./components/homePage')}), 
         React.createElement(Route, {name: "authors", handler: require('./components/authors/authorPage')}), 
         React.createElement(Route, {name: "about", handler: require('./components/about/aboutPage')}), 
-        React.createElement(NotFoundRoute, {handler: require('./components/FourOFour')})
+        React.createElement(NotFoundRoute, {handler: require('./components/FourOFour')}), 
+        React.createElement(Redirect, {from: "about-us", to: "about"}), 
+        React.createElement(Redirect, {from: "awthors", to: "authors"}), 
+        React.createElement(Redirect, {from: "about/*", to: "about"})
     )
 );
 
